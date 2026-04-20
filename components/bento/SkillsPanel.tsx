@@ -44,10 +44,10 @@ export function SkillsPanel() {
                    key={cat}
                    onClick={() => handleCategoryClick(cat)}
                    style={{ fontFamily: '"Courier New", monospace' }}
-                   className={`relative px-4 py-3 text-left rounded-lg transition-all duration-150 font-bold tracking-widest text-[11px] uppercase
+                   className={`relative px-4 py-3 text-left rounded-lg transition-all duration-150 font-black tracking-wider text-xs uppercase
                       ${activeCategory === cat
-                         ? 'bg-[#3FA684]/15 border border-[#3FA684]/40 text-[#3FA684] shadow-[0_0_12px_rgba(63,166,132,0.2)] translate-y-[1px]'
-                         : 'bg-white/[0.03] border border-white/8 text-white/40 hover:text-white/70 hover:bg-white/[0.06] hover:border-white/15'}`}
+                         ? 'bg-[#3FA684]/20 border border-[#3FA684]/60 text-[#3FA684] shadow-[0_0_16px_rgba(63,166,132,0.25)] translate-y-[1px]'
+                         : 'bg-white/[0.05] border border-white/15 text-white/70 hover:text-white hover:bg-white/[0.09] hover:border-white/30'}`}
                  >
                     {cat}
                     {activeCategory === cat && (

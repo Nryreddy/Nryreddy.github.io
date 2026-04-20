@@ -4,8 +4,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 
 export const metadata = {
-  title: "Creative Freelancer Portfolio",
-  description: "Inspired by Pierre-Louis",
+  title: "Nithesh Portfolio",
+  description: "AI & Data Engineer | Nithesh Reddy",
 };
 
 export default function RootLayout({
