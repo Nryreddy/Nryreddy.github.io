@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 
 
 
@@ -7,9 +8,17 @@ interface SidebarProps {
 }
 
 export function Sidebar({ isPoweredOn }: SidebarProps) {
+  const [showStatic, setShowStatic] = useState(false);
 
-
-
+  useEffect(() => {
+    if (isPoweredOn) {
+      // Estimate 5 full loops taking roughly 10 seconds total
+      const timer = setTimeout(() => setShowStatic(true), 10000);
+      return () => clearTimeout(timer);
+    } else {
+      setShowStatic(false);
+    }
+  }, [isPoweredOn]);
 
   return (
     <div className="w-full h-full bg-[#1e3489] rounded-3xl p-6 flex flex-col relative z-10 shadow-2xl overflow-hidden border border-white/10">
@@ -33,9 +42,9 @@ export function Sidebar({ isPoweredOn }: SidebarProps) {
         <div className={`transition-opacity duration-1000 w-full h-full absolute inset-0 ${isPoweredOn ? "opacity-100" : "opacity-20"}`}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
-            src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGRqeHllZjM4aG9wYXR5aHlzcGx4eGdvdnZiaTB4YnpxM29nZjZyNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TiDuxe6yNQit3Sk7m9/giphy.gif" 
+            src={showStatic ? "/images/character.png" : "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGRqeHllZjM4aG9wYXR5aHlzcGx4eGdvdnZiaTB4YnpxM29nZjZyNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TiDuxe6yNQit3Sk7m9/giphy.gif"} 
             alt="Profile Avatar" 
-            className="w-full h-full object-cover" 
+            className="w-full h-full object-cover transition-all duration-700" 
           />
         </div>
         {/* Slanted Glare inside screen */}
