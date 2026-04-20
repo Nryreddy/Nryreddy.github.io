@@ -29,7 +29,7 @@ export function Sidebar({ isPoweredOn }: SidebarProps) {
             <div className="w-8 h-8 bg-black/30 rounded-full flex items-center justify-center font-black pb-0.5 shadow-inner">
                <span className="text-white text-sm" style={{ transform: "rotate(-10deg)" }}>N</span>
             </div>
-            <h2 className="text-[#f1f1f1] text-2xl z-10" style={{ fontFamily: '"Mileast", "Playfair Display", serif', letterSpacing: "1px" }}>Nithesh Reddy</h2>
+            <h2 className="text-[#f1f1f1] text-2xl z-10" style={{ fontFamily: '"Retro-Lettering-Font", cursive, monospace', letterSpacing: "1px", fontWeight: 900 }}>Nithesh Reddy</h2>
          </div>
          {/* Dot grid decoration */}
          <div className="grid grid-cols-3 gap-1 opactiy-50">

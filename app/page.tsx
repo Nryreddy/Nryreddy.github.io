@@ -10,6 +10,7 @@ import { ProjectsPanel } from "@/components/bento/ProjectsPanel";
 import { SkillsPanel } from "@/components/bento/SkillsPanel";
 import { EducationPanel } from "@/components/bento/EducationPanel";
 import { ExperiencePanel } from "@/components/bento/ExperiencePanel";
+import { AboutPanel } from "@/components/bento/AboutPanel";
 
 export default function Home() {
   const [isPoweredOn, setIsPoweredOn] = useState(false);
@@ -57,6 +58,11 @@ export default function Home() {
                  {/* Top Row: 3 standalone social panels */}
                  <div className="h-auto md:h-[110px] shrink-0 max-w-[400px]">
                    <SocialsPanel />
+                 </div>
+
+                 {/* About Me */}
+                 <div className="flex-none w-full">
+                   <AboutPanel />
                  </div>
 
                  {/* Middle block: Portfolio Main */}
