@@ -1,23 +1,15 @@
 "use client";
-import { useState } from "react";
-import { ArrowRight, Settings } from "lucide-react";
-import { useAudio } from "@/hooks/useAudio";
-import { motion, AnimatePresence } from "framer-motion";
+
+
 
 interface SidebarProps {
   isPoweredOn: boolean;
 }
 
 export function Sidebar({ isPoweredOn }: SidebarProps) {
-  const { playDroplet } = useAudio();
-  const [activeToggle, setActiveToggle] = useState<string | null>("AI ENGINEER");
 
-  const toggles = ["AI ENGINEER", "DATA ENGINEER", "ML EXPERT"];
 
-  const handleToggle = (name: string) => {
-    playDroplet();
-    setActiveToggle(activeToggle === name ? null : name);
-  };
+
 
   return (
     <div className="w-full h-full bg-[#1e3489] rounded-3xl p-6 flex flex-col relative z-10 shadow-2xl overflow-hidden border border-white/10">

@@ -10,7 +10,6 @@ import { ProjectsPanel } from "@/components/bento/ProjectsPanel";
 import { SkillsPanel } from "@/components/bento/SkillsPanel";
 import { EducationPanel } from "@/components/bento/EducationPanel";
 import { ExperiencePanel } from "@/components/bento/ExperiencePanel";
-import { AudioToggle } from "@/components/ui/AudioToggle";
 
 export default function Home() {
   const [isPoweredOn, setIsPoweredOn] = useState(false);

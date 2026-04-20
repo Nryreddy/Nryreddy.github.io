@@ -1,7 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { default as NextImage } from "next/image"; // dummy for now
-import { HTMLAttributes, MouseEvent, useState } from "react";
+import { useState } from "react";
 import { motion, HTMLMotionProps } from "framer-motion";
 
 interface PanelProps extends HTMLMotionProps<"div"> {
@@ -13,7 +12,7 @@ export function Panel({ className, glass = false, children, onMouseMove, onMouse
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
-  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setMousePosition({
       x: e.clientX - rect.left,

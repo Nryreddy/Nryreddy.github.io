@@ -5,7 +5,7 @@ import { useAudio } from "@/hooks/useAudio";
 import { Magnetic } from "@/components/ui/Magnetic";
 
 export function ProjectsPanel() {
-  const { playDroplet, playRedirect } = useAudio();
+  const { playRedirect } = useAudio();
   
   const certs = [
     { 

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useAudio } from "@/hooks/useAudio";
 import { TerminalSquare, ChevronRight } from "lucide-react";
 
@@ -46,7 +46,7 @@ export function ExperiencePanel() {
 
   const currentJob = jobs[activeIdx];
 
-  const screenVariants = {
+  const screenVariants: Variants = {
     hidden: { opacity: 0, filter: "brightness(3) saturate(0) blur(5px)", scale: 0.98 },
     show: { 
         opacity: 1, 
@@ -57,7 +57,7 @@ export function ExperiencePanel() {
     exit: { opacity: 0, scale: 0.99, filter: "brightness(0) blur(10px)", transition: { duration: 0.1 } }
   };
 
-  const lineVariants = {
+  const lineVariants: Variants = {
     hidden: { opacity: 0, x: -10 },
     show: { opacity: 1, x: 0, transition: { type: "tween", ease: "easeOut", duration: 0.2 } }
   };
