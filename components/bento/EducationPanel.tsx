@@ -27,7 +27,7 @@ export function EducationPanel() {
          <div className="p-2 bg-white/5 rounded-lg border border-white/10 shadow-inner">
            <GraduationCap size={20} className="text-[#4B6BFB]" />
          </div>
-         <h2 className="text-xl font-black uppercase tracking-[0.2em] text-white">Education</h2>
+         <h2 className="text-sm font-bold uppercase tracking-widest text-white/90">Education</h2>
       </div>
 
       <div className="flex flex-col gap-4 relative z-10">

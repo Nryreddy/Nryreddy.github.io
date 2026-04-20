@@ -33,7 +33,7 @@ export function SkillsPanel() {
           <div className="p-2 bg-white/5 rounded-lg border border-white/10 shadow-inner">
             <Cpu size={20} className="text-[#3FA684]" />
           </div>
-          <h2 className="text-xl font-black uppercase tracking-[0.2em] text-white">Skills</h2>
+          <h2 className="text-sm font-bold uppercase tracking-widest text-white/90">Skills</h2>
        </div>
 
        <div className="flex flex-col md:flex-row gap-4 md:gap-8 min-h-[500px]">

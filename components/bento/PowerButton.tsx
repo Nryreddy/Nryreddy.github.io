@@ -51,7 +51,7 @@ export function PowerButton({ onPower }: PowerButtonProps) {
 
          {/* Screen */}
          <div className="bg-[#1f1f1f] rounded-lg p-6 pb-10 min-h-[160px] relative overflow-hidden noise-overlay shadow-[inset_0_4px_20px_rgba(0,0,0,0.5)]">
-            <h2 className="text-[#f1f1f1] text-3xl font-bold tracking-tight z-10 relative">I&apos;m Nithesh Reddy</h2>
+            <h2 className="text-[#f1f1f1] text-4xl font-medium tracking-wide z-10 relative" style={{ fontFamily: '"Mileast", "Playfair Display", serif' }}>I&apos;m Nithesh Reddy</h2>
             <p className="text-[#969696] text-[15px] font-medium mt-3 leading-relaxed z-10 relative pr-4">
               AI and Data Engineer, based in Australia.
             </p>

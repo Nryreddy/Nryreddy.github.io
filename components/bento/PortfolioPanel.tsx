@@ -96,7 +96,7 @@ export function PortfolioPanel() {
             <div className="text-[#fbbd23] bg-white/5 p-1 rounded-md border border-white/5">
                <ImageIcon size={20} strokeWidth={2.5} />
             </div>
-            <h2 className="text-sm md:text-base font-black uppercase text-white tracking-[0.2em] relative top-[1px]">
+            <h2 className="text-sm font-bold uppercase tracking-widest text-white/90 mt-0.5">
                Portfolio
             </h2>
          </div>
