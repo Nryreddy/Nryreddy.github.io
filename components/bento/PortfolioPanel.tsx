@@ -36,6 +36,18 @@ export function PortfolioPanel() {
     },
     { 
       id: 3, 
+      title: "GuardianVision Alert", 
+      category: "AI Incident Alerting System",
+      link: "https://youtu.be/puxXXZ_KvLU",
+      bullets: [
+        "Designed and built a near real-time surveillance intelligence system that processes full-frame incident clips (±10s context), improving event understanding accuracy by ~40% compared to frame-only analysis.",
+        "Implemented a multi-stage AI pipeline (clip preprocessing → vision-language reasoning → structured event classification), reducing false-positive alerts by ~50% through context-aware analysis.",
+        "Developed a rule-based severity scoring and response engine (low/medium/high) that automated alert workflows, enabling real-time WhatsApp, Telegram and Email notifications (<3 seconds latency) for critical events.",
+        "Strengthened system security by deploying the AI agent on a VPS with VPN-restricted access and designing a sandboxed processing pipeline to isolate untrusted inputs and mitigate prompt injection risks in downstream workflows."
+      ]
+    },
+    { 
+      id: 4, 
       title: "AWS BirdTag Platform", 
       category: "Computer Vision & AWS",
       link: "https://github.com/Nryreddy/aws-birdtag_platform",
@@ -47,7 +59,7 @@ export function PortfolioPanel() {
       ]
     },
     { 
-      id: 4, 
+      id: 5, 
       title: "MediRec Voice Agent", 
       category: "Voice Assistant",
       link: "https://github.com/Nryreddy/MediRec_Voice_Agent",
@@ -58,7 +70,7 @@ export function PortfolioPanel() {
       ]
     },
     { 
-      id: 5, 
+      id: 6, 
       title: "Skyways Data Ingestion", 
       category: "Cloud ETL Pipeline",
       link: "https://github.com/Nryreddy/Skyways_Data_Ingestion",
