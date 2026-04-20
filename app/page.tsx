@@ -56,7 +56,7 @@ export default function Home() {
                <div className="col-span-1 md:col-span-8 h-auto flex flex-col gap-4 md:gap-6 relative z-10">
                  
                  {/* Top Row: 3 standalone social panels */}
-                 <div className="h-auto md:h-[110px] shrink-0 max-w-[400px]">
+                 <div className="h-auto md:h-[72px] shrink-0 max-w-[340px]">
                    <SocialsPanel />
                  </div>
 

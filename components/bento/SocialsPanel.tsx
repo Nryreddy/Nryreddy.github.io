@@ -17,16 +17,16 @@ export function SocialsPanel() {
   ];
 
   return (
-    <div className="grid grid-cols-3 gap-4 md:gap-6 h-full">
+    <div className="grid grid-cols-3 gap-2 md:gap-3 h-full">
       {socials.map((s, i) => (
-        <Panel key={i} className="p-0 aspect-square group backdrop-blur-xl relative">
+        <Panel key={i} className="p-0 group backdrop-blur-xl relative" style={{ aspectRatio: "unset", height: "64px" }}>
            <Magnetic strength={0.3} className="absolute inset-0 w-full h-full flex items-center justify-center z-20">
              <a
                href={s.url}
                target={s.url.startsWith("http") ? "_blank" : undefined}
                rel="noopener noreferrer"
                onClick={playRedirect}
-               className={`w-[60px] h-[60px] md:w-[80px] md:h-[80px] rounded-full flex items-center justify-center transition-all duration-300 ${s.bg} border ${s.border} ${s.hover}`}
+               className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${s.bg} border ${s.border} ${s.hover}`}
              >
                {s.icon}
              </a>
