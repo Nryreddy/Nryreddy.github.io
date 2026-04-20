@@ -40,19 +40,20 @@ export function SkillsPanel() {
           {/* Left: Hardware Category Switches */}
           <div className="w-full md:w-[260px] flex flex-col gap-3 shrink-0 relative z-20">
              {(Object.keys(skillData) as Array<keyof typeof skillData>).map((cat) => (
-                <button 
-                  key={cat}
-                  onClick={() => handleCategoryClick(cat)}
-                  className={`px-5 py-5 text-left rounded-xl transition-all duration-200 font-bold tracking-widest text-[11px] md:text-xs border-y-[3px] border-x
-                     ${activeCategory === cat 
-                        ? 'bg-[#1e1e24] border-t-white/5 border-b-black border-x-[#1a1a1f] text-white shadow-[inset_0_5px_15px_rgba(0,0,0,0.6)] translate-y-[3px]' 
-                        : 'bg-[#25252b] border-t-white/10 border-b-[#0c0c0e] border-x-[#2a2a30] text-white/40 hover:text-white/80 hover:bg-[#2a2a30] shadow-[0_5px_0_0_#0c0c0e]'}`}
-                >
-                   {cat}
-                   {activeCategory === cat && (
-                     <span className="absolute right-4 w-2 h-2 rounded-full bg-[#3FA684] shadow-[0_0_10px_#3FA684] animate-pulse"></span>
-                   )}
-                </button>
+                 <button
+                   key={cat}
+                   onClick={() => handleCategoryClick(cat)}
+                   style={{ fontFamily: '"Courier New", monospace' }}
+                   className={`relative px-4 py-3 text-left rounded-lg transition-all duration-150 font-bold tracking-widest text-[11px] uppercase
+                      ${activeCategory === cat
+                         ? 'bg-[#3FA684]/15 border border-[#3FA684]/40 text-[#3FA684] shadow-[0_0_12px_rgba(63,166,132,0.2)] translate-y-[1px]'
+                         : 'bg-white/[0.03] border border-white/8 text-white/40 hover:text-white/70 hover:bg-white/[0.06] hover:border-white/15'}`}
+                 >
+                    {cat}
+                    {activeCategory === cat && (
+                      <span className="absolute right-3 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#3FA684] shadow-[0_0_8px_#3FA684] animate-pulse"></span>
+                    )}
+                 </button>
              ))}
           </div>
 
@@ -66,12 +67,7 @@ export function SkillsPanel() {
              {/* Grain */}
              <div className="pointer-events-none absolute inset-0 opacity-[0.25] mix-blend-overlay z-0" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }}></div>
 
-             {/* Background Matrix Watermark */}
-             <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
-                <span className="font-black text-[120px] md:text-[180px] text-white/[0.03] uppercase select-none tracking-tighter leading-none -rotate-12">
-                   {activeCategory.split(' ')[0]}
-                </span>
-             </div>
+
 
              {/* Interactive Physics Badges */}
              <div className="absolute inset-0 p-6 md:p-10 flex flex-wrap content-center justify-center gap-4 md:gap-5 z-20">
@@ -82,20 +78,20 @@ export function SkillsPanel() {
                        dragConstraints={screenRef}
                        dragElastic={0.4}
                        dragMomentum={true}
-                       initial={{ opacity: 0, scale: 0, y: -80, rotate: (Math.random() - 0.5) * 20 }}
-                       animate={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
-                       transition={{ 
-                         type: "spring", 
-                         stiffness: 250, 
-                         damping: 12, 
-                         mass: 1.2,
-                         delay: i * 0.05 
+                       initial={{ opacity: 0, scale: 0, y: -60 }}
+                       animate={{ opacity: 1, scale: 1, y: 0 }}
+                       transition={{
+                         type: "spring",
+                         stiffness: 300,
+                         damping: 18,
+                         delay: i * 0.04
                        }}
-                       whileDrag={{ scale: 1.15, zIndex: 50, cursor: "grabbing" }}
-                       whileHover={{ scale: 1.05 }}
-                       className="cursor-grab active:cursor-grabbing px-5 py-3 md:px-7 md:py-4 bg-[#1e1e24] shadow-[0_10px_20px_rgba(0,0,0,0.6)] backdrop-blur-md rounded-2xl border border-white/5 flex items-center justify-center font-bold text-xs md:text-sm tracking-widest text-[#d8d8d8] hover:text-white"
+                       whileDrag={{ scale: 1.12, zIndex: 50, cursor: "grabbing" }}
+                       whileHover={{ scale: 1.06, borderColor: "rgba(63,166,132,0.5)" }}
+                       className="cursor-grab active:cursor-grabbing px-4 py-2 md:px-5 md:py-2.5 bg-[#18181d] shadow-[0_6px_16px_rgba(0,0,0,0.5)] rounded-lg border border-white/8 flex items-center justify-center text-xs md:text-sm tracking-widest text-white/80 hover:text-white font-bold"
+                       style={{ fontFamily: '"Courier New", monospace' }}
                     >
-                       <span className="drop-shadow-md">{skill}</span>
+                       {skill}
                     </motion.div>
                  ))}
              </div>
