@@ -1,7 +1,7 @@
 "use client";
 import { Panel } from "@/components/ui/Panel";
 import { Cpu } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, Transition } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { useAudio } from "@/hooks/useAudio";
 
@@ -37,7 +37,7 @@ export function SkillsPanel() {
    };
 
    // Staggered Zero-Gravity Floating Animation for Mobile
-   const getAnimation = (i: number): any => {
+   const getAnimation = () => {
       if (isMobile) {
          return {
             opacity: 1,
@@ -52,26 +52,26 @@ export function SkillsPanel() {
       };
    };
 
-   const getTransition = (i: number): any => {
+   const getTransition = (i: number): Transition => {
       if (isMobile) {
          return {
             y: {
                repeat: Infinity,
-               repeatType: "mirror" as const,
+               repeatType: "mirror",
                duration: 2.2 + (i % 3) * 0.6,
                ease: "easeInOut",
                delay: i * 0.1
             },
             opacity: { duration: 0.3 },
             scale: { duration: 0.3 }
-         };
+         } as Transition;
       }
       return {
          type: "spring",
          stiffness: 300,
          damping: 18,
          delay: i * 0.04
-      };
+      } as Transition;
    };
 
    return (
@@ -125,7 +125,7 @@ export function SkillsPanel() {
                         dragElastic={0.4}
                         dragMomentum={true}
                         initial={{ opacity: 0, scale: 0, y: -60 }}
-                        animate={getAnimation(i)}
+                        animate={getAnimation()}
                         transition={getTransition(i)}
                         whileDrag={isMobile ? undefined : { scale: 1.12, zIndex: 50, cursor: "grabbing" }}
                         whileHover={isMobile ? undefined : { scale: 1.06, borderColor: "rgba(63,166,132,0.5)" }}
