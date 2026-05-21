@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Sidebar } from "@/components/bento/Sidebar";
 import { PowerButton } from "@/components/bento/PowerButton";
 import { SocialsPanel } from "@/components/bento/SocialsPanel";
+import { CinephilePanel } from "@/components/bento/CinephilePanel";
 import { PortfolioPanel } from "@/components/bento/PortfolioPanel";
 import { ProjectsPanel } from "@/components/bento/ProjectsPanel";
 import { SkillsPanel } from "@/components/bento/SkillsPanel";
@@ -50,15 +51,20 @@ export default function Home() {
                  <div className="flex-1 min-h-[250px] shrink-0">
                     <ProjectsPanel />
                  </div>
+
+                 {/* Cinephile Panel */}
+                 <div className="shrink-0">
+                    <CinephilePanel />
+                 </div>
                </div>
 
                {/* MAIN CONTENT AREA: Socials + Portfolio + Skills */}
                <div className="col-span-1 md:col-span-8 h-auto flex flex-col gap-4 md:gap-6 relative z-10">
                  
-                 {/* Top Row: 3 standalone social panels */}
-                 <div className="h-auto md:h-[72px] shrink-0 max-w-[340px]">
-                   <SocialsPanel />
-                 </div>
+                  {/* Top Row: 3 standalone social panels */}
+                  <div className="h-auto md:h-[72px] shrink-0 max-w-[340px]">
+                    <SocialsPanel />
+                  </div>
 
                  {/* About Me */}
                  <div className="flex-none w-full">

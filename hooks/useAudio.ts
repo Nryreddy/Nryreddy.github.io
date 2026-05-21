@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef } from "react";
 export function useAudio() {
   const powerAudioRef = useRef<HTMLAudioElement | null>(null);
   const redirectAudioRef = useRef<HTMLAudioElement | null>(null);
+  const dropletAudioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     // Safely preload audio resources on component mount
@@ -12,6 +13,9 @@ export function useAudio() {
 
     redirectAudioRef.current = new Audio("/sounds/universfield-retro-game-shot-152052.mp3");
     redirectAudioRef.current.volume = 0.4;
+
+    dropletAudioRef.current = new Audio("/sounds/button-ui.mp3");
+    dropletAudioRef.current.volume = 0.3;
   }, []);
 
   const playPowerOn = useCallback(() => {
@@ -34,32 +38,11 @@ export function useAudio() {
 
   const playDroplet = useCallback(() => {
     try {
-      const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
-      if (!AudioContext) return;
-      const ctx = new AudioContext();
-      
-      const osc = ctx.createOscillator();
-      const gainNode = ctx.createGain();
-      
-      osc.connect(gainNode);
-      gainNode.connect(ctx.destination);
-      
-      // Simulate drop sound (frequency sweep)
-      const now = ctx.currentTime;
-      osc.type = "sine";
-      osc.frequency.setValueAtTime(400, now);
-      osc.frequency.exponentialRampToValueAtTime(800, now + 0.1);
-      
-      // Volume envelope (quick attack, quick decay)
-      gainNode.gain.setValueAtTime(0, now);
-      gainNode.gain.linearRampToValueAtTime(0.5, now + 0.02);
-      gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
-      
-      osc.start(now);
-      osc.stop(now + 0.1);
-    } catch (err) {
-      console.error("Audio context failed", err);
-    }
+      if (dropletAudioRef.current) {
+        dropletAudioRef.current.currentTime = 0;
+        dropletAudioRef.current.play().catch(console.error);
+      }
+    } catch (e) {}
   }, []);
 
   return { playDroplet, playPowerOn, playRedirect };

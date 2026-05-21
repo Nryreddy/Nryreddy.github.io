@@ -12,6 +12,19 @@ export function PortfolioPanel() {
   const projects = [
     { 
       id: 1, 
+      title: "Azure Compliance Intelligence Platform", 
+      category: "Agentic Multimodal RAG",
+      link: "https://github.com/Nryreddy/Azure-Compliance-Intelligence-Platform",
+      bullets: [
+        "Designed and built an Azure-native agentic multimodal platform using LangGraph, Azure OpenAI, Azure AI Search, and Azure Video Indexer to automatically audit video content against enterprise policy frameworks.",
+        "Engineered a hybrid multimodal RAG pipeline combining transcript embeddings and OCR-extracted visual text retrieval, improving detection of compliance violations missed by transcript-only analysis.",
+        "Optimised video preprocessing and indexing workflows, reducing end-to-end processing latency by ~5x.",
+        "Implemented full-stack observability using OpenTelemetry, Azure Application Insights, and LangSmith to trace agent execution flows, monitor latency bottlenecks, and analyse token consumption across workflows.",
+        "Improved audit reliability and consistency by enforcing structured reasoning with strict Pydantic schemas and deterministic JSON outputs, significantly reducing hallucinated compliance findings."
+      ]
+    },
+    { 
+      id: 2, 
       title: "AI Email Triage System", 
       category: "OpenClaw Agent",
       link: "https://www.youtube.com/watch?v=kETHtwTJ6Cw",
@@ -24,7 +37,7 @@ export function PortfolioPanel() {
       ]
     },
     { 
-      id: 2, 
+      id: 3, 
       title: "Patient MemVault Agent", 
       category: "Clinical AI System",
       link: "https://www.linkedin.com/posts/nithesh-reddy-2903a91a9_aiengineering-llm-agents-ugcPost-7429731678517985280-9iEE",
@@ -35,7 +48,7 @@ export function PortfolioPanel() {
       ]
     },
     { 
-      id: 3, 
+      id: 4, 
       title: "GuardianVision Alert", 
       category: "AI Incident Alerting System",
       link: "https://youtu.be/puxXXZ_KvLU",
@@ -47,7 +60,7 @@ export function PortfolioPanel() {
       ]
     },
     { 
-      id: 4, 
+      id: 5, 
       title: "AWS BirdTag Platform", 
       category: "Computer Vision & AWS",
       link: "https://github.com/Nryreddy/aws-birdtag_platform",
@@ -59,7 +72,7 @@ export function PortfolioPanel() {
       ]
     },
     { 
-      id: 5, 
+      id: 6, 
       title: "MediRec Voice Agent", 
       category: "Voice Assistant",
       link: "https://github.com/Nryreddy/MediRec_Voice_Agent",
@@ -70,7 +83,7 @@ export function PortfolioPanel() {
       ]
     },
     { 
-      id: 6, 
+      id: 7, 
       title: "Skyways Data Ingestion", 
       category: "Cloud ETL Pipeline",
       link: "https://github.com/Nryreddy/Skyways_Data_Ingestion",
