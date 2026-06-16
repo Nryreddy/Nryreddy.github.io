@@ -10,9 +10,9 @@ export function PortfolioPanel() {
   const [expandedId, setExpandedId] = useState<number | null>(null);
 
   const projects = [
-    { 
-      id: 1, 
-      title: "Azure Compliance Intelligence Platform", 
+    {
+      id: 1,
+      title: "Azure Compliance Intelligence Platform",
       category: "Agentic Multimodal RAG",
       link: "https://github.com/Nryreddy/Azure-Compliance-Intelligence-Platform",
       bullets: [
@@ -23,9 +23,9 @@ export function PortfolioPanel() {
         "Improved audit reliability and consistency by enforcing structured reasoning with strict Pydantic schemas and deterministic JSON outputs, significantly reducing hallucinated compliance findings."
       ]
     },
-    { 
-      id: 2, 
-      title: "AI Email Triage System", 
+    {
+      id: 2,
+      title: "AI Email Triage System",
       category: "OpenClaw Agent",
       link: "https://www.youtube.com/watch?v=kETHtwTJ6Cw",
       bullets: [
@@ -36,9 +36,21 @@ export function PortfolioPanel() {
         "Implemented priority tagging, duplicate detection, and structured logging to improve triage accuracy."
       ]
     },
-    { 
-      id: 3, 
-      title: "Patient MemVault Agent", 
+    {
+      id: 3,
+      title: "KubeAssistRAG",
+      category: "Kubernetes Operations Copilot",
+      link: "https://github.com/Nryreddy/KubeAssistRAG",
+      bullets: [
+        "Built an advanced, Kubernetes-aware RAG system acting as an operational copilot with multi-strategy search (Dense, Sparse, Hybrid) to troubleshoot cluster issues.",
+        "Implemented LangGraph orchestration with state-of-the-art retrieval techniques including Reranking, CRAG, HyDE, and Self-RAG to correctly answer complex operational questions.",
+        "Designed a Text2SQL auto-routing feature to detect and route queries regarding cluster metrics directly to internal databases.",
+        "Optimized inference and system performance with Semantic Caching using Upstash Redis, decreasing response times from 9s to ~3.5s."
+      ]
+    },
+    {
+      id: 4,
+      title: "Patient MemVault Agent",
       category: "Clinical AI System",
       link: "https://www.linkedin.com/posts/nithesh-reddy-2903a91a9_aiengineering-llm-agents-ugcPost-7429731678517985280-9iEE",
       bullets: [
@@ -47,9 +59,9 @@ export function PortfolioPanel() {
         "Integrated Mem0 as a semantic memory layer to replace raw chat-history prompting, enabling sub-second retrieval <300ms of patient data and improving response relevance by prioritizing structured facts."
       ]
     },
-    { 
-      id: 4, 
-      title: "GuardianVision Alert", 
+    {
+      id: 5,
+      title: "GuardianVision Alert",
       category: "AI Incident Alerting System",
       link: "https://youtu.be/puxXXZ_KvLU",
       bullets: [
@@ -59,9 +71,9 @@ export function PortfolioPanel() {
         "Strengthened system security by deploying the AI agent on a VPS with VPN-restricted access and designing a sandboxed processing pipeline to isolate untrusted inputs and mitigate prompt injection risks in downstream workflows."
       ]
     },
-    { 
-      id: 5, 
-      title: "AWS BirdTag Platform", 
+    {
+      id: 6,
+      title: "AWS BirdTag Platform",
       category: "Computer Vision & AWS",
       link: "https://github.com/Nryreddy/aws-birdtag_platform",
       bullets: [
@@ -71,9 +83,9 @@ export function PortfolioPanel() {
         "Implemented structured logging and monitoring with CloudWatch, improving observability and ensuring reliable, repeatable inference execution under concurrent requests."
       ]
     },
-    { 
-      id: 6, 
-      title: "MediRec Voice Agent", 
+    {
+      id: 7,
+      title: "MediRec Voice Agent",
       category: "Voice Assistant",
       link: "https://github.com/Nryreddy/MediRec_Voice_Agent",
       bullets: [
@@ -82,9 +94,9 @@ export function PortfolioPanel() {
         "Focused on reliability and state handling to support healthcare-oriented conversational use cases."
       ]
     },
-    { 
-      id: 7, 
-      title: "Skyways Data Ingestion", 
+    {
+      id: 8,
+      title: "Skyways Data Ingestion",
       category: "Cloud ETL Pipeline",
       link: "https://github.com/Nryreddy/Skyways_Data_Ingestion",
       bullets: [
@@ -102,93 +114,93 @@ export function PortfolioPanel() {
 
   return (
     <Panel className="flex flex-col p-4 md:p-5 gap-3 md:gap-4 bg-[#1e1e24] border-none shadow-2xl h-full min-h-[450px]">
-      
+
       {/* Top Header Block */}
       <div className="flex items-center justify-between bg-[#151518] rounded-xl p-4 md:p-5 shadow-inner">
-         <div className="flex items-center gap-4">
-            <div className="text-[#fbbd23] bg-white/5 p-1 rounded-md border border-white/5">
-               <ImageIcon size={20} strokeWidth={2.5} />
-            </div>
-            <h2 className="text-sm font-bold uppercase tracking-widest text-white/90 mt-0.5">
-               Portfolio
-            </h2>
-         </div>
-         
-         <div className="grid grid-cols-5 gap-[3px] opacity-20">
-            {[...Array(20)].map((_, i) => (
-              <div key={i} className="w-1.5 h-1.5 bg-white rounded-full"></div>
-            ))}
-         </div>
+        <div className="flex items-center gap-4">
+          <div className="text-[#fbbd23] bg-white/5 p-1 rounded-md border border-white/5">
+            <ImageIcon size={20} strokeWidth={2.5} />
+          </div>
+          <h2 className="text-sm font-bold uppercase tracking-widest text-white/90 mt-0.5">
+            Portfolio
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-5 gap-[3px] opacity-20">
+          {[...Array(20)].map((_, i) => (
+            <div key={i} className="w-1.5 h-1.5 bg-white rounded-full"></div>
+          ))}
+        </div>
       </div>
 
       <div className="flex-1 rounded-2xl bg-[#1d1d23] border-[6px] border-[#151518] shadow-inner relative overflow-hidden flex flex-col p-4 md:p-6">
-         
-         <div 
-           className="pointer-events-none absolute inset-0 opacity-40 mix-blend-overlay z-0" 
-           style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }}
-         ></div>
 
-         <div className="relative z-10 flex flex-col gap-3 overflow-y-auto w-full h-full pr-1 pb-4 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full">
-           {projects.map((p) => {
-             const isExpanded = expandedId === p.id;
-             return (
-               <motion.div 
-                 layout
-                 key={p.id} 
-                 onClick={() => handleToggle(p.id)}
-                 className={`w-full hover:bg-white/10 backdrop-blur-sm border transition-all cursor-pointer group shrink-0 overflow-hidden ${isExpanded ? 'bg-white/10 border-white/20 rounded-2xl shadow-lg' : 'bg-white/5 border-white/10 rounded-xl'}`}
-               >
-                 <div className={`flex items-center justify-between w-full ${isExpanded ? 'p-5' : 'p-4'}`}>
-                   <div className="flex flex-col">
-                     <motion.h3 layout className="text-lg md:text-xl font-bold text-white tracking-wide drop-shadow-sm">{p.title}</motion.h3>
-                     <motion.p layout className="text-[10px] md:text-xs text-[#fbbd23] font-black tracking-widest uppercase mt-1 drop-shadow-md">{p.category}</motion.p>
-                   </div>
-                   
-                   <div className="flex items-center gap-3">
-                     <motion.div 
-                        animate={{ rotate: isExpanded ? 180 : 0 }} 
-                        transition={{ duration: 0.3 }}
-                        className="text-white/40 group-hover:text-white transition-colors p-1"
-                     >
-                       <ChevronDown size={20} />
-                     </motion.div>
+        <div
+          className="pointer-events-none absolute inset-0 opacity-40 mix-blend-overlay z-0"
+          style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }}
+        ></div>
 
-                     <a 
-                       href={p.link} 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       onClick={(e) => { e.stopPropagation(); playRedirect(); }}
-                       className="w-10 h-10 rounded-full bg-black/40 flex items-center justify-center group-hover:bg-[#fbbd23] transition-all border border-white/5 shadow-inner"
-                     >
-                        <ArrowUpRight size={18} className="text-white/70 group-hover:text-black transition-colors" />
-                     </a>
-                   </div>
-                 </div>
+        <div className="relative z-10 flex flex-col gap-3 overflow-y-auto w-full h-full pr-1 pb-4 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full">
+          {projects.map((p) => {
+            const isExpanded = expandedId === p.id;
+            return (
+              <motion.div
+                layout
+                key={p.id}
+                onClick={() => handleToggle(p.id)}
+                className={`w-full hover:bg-white/10 backdrop-blur-sm border transition-all cursor-pointer group shrink-0 overflow-hidden ${isExpanded ? 'bg-white/10 border-white/20 rounded-2xl shadow-lg' : 'bg-white/5 border-white/10 rounded-xl'}`}
+              >
+                <div className={`flex items-center justify-between w-full ${isExpanded ? 'p-5' : 'p-4'}`}>
+                  <div className="flex flex-col">
+                    <motion.h3 layout className="text-lg md:text-xl font-bold text-white tracking-wide drop-shadow-sm">{p.title}</motion.h3>
+                    <motion.p layout className="text-[10px] md:text-xs text-[#fbbd23] font-black tracking-widest uppercase mt-1 drop-shadow-md">{p.category}</motion.p>
+                  </div>
 
-                 <AnimatePresence>
-                   {isExpanded && (
-                     <motion.div
-                       initial={{ height: 0, opacity: 0 }}
-                       animate={{ height: "auto", opacity: 1 }}
-                       exit={{ height: 0, opacity: 0 }}
-                       transition={{ duration: 0.3, ease: "easeInOut" }}
-                       className="overflow-hidden px-5 pb-5"
-                     >
-                       <ul className="flex flex-col gap-3 border-t border-white/10 pt-4">
-                         {p.bullets.map((bullet, idx) => (
-                           <li key={idx} className="text-sm font-medium text-white/80 leading-relaxed tracking-wide flex items-start gap-3">
-                             <span className="text-[#fbbd23] mt-0.5 shrink-0 select-none">▹</span>
-                             <span>{bullet}</span>
-                           </li>
-                         ))}
-                       </ul>
-                     </motion.div>
-                   )}
-                 </AnimatePresence>
-               </motion.div>
-             );
-           })}
-         </div>
+                  <div className="flex items-center gap-3">
+                    <motion.div
+                      animate={{ rotate: isExpanded ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="text-white/40 group-hover:text-white transition-colors p-1"
+                    >
+                      <ChevronDown size={20} />
+                    </motion.div>
+
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => { e.stopPropagation(); playRedirect(); }}
+                      className="w-10 h-10 rounded-full bg-black/40 flex items-center justify-center group-hover:bg-[#fbbd23] transition-all border border-white/5 shadow-inner"
+                    >
+                      <ArrowUpRight size={18} className="text-white/70 group-hover:text-black transition-colors" />
+                    </a>
+                  </div>
+                </div>
+
+                <AnimatePresence>
+                  {isExpanded && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden px-5 pb-5"
+                    >
+                      <ul className="flex flex-col gap-3 border-t border-white/10 pt-4">
+                        {p.bullets.map((bullet, idx) => (
+                          <li key={idx} className="text-sm font-medium text-white/80 leading-relaxed tracking-wide flex items-start gap-3">
+                            <span className="text-[#fbbd23] mt-0.5 shrink-0 select-none">▹</span>
+                            <span>{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </div>
 
       </div>
     </Panel>
