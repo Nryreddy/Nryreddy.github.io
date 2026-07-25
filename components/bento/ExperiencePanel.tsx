@@ -11,6 +11,21 @@ export function ExperiencePanel() {
   const jobs = [
     {
       id: "CH_01",
+      system: "NEUZEN_CORE",
+      company: "NeuZen AI",
+      role: "AI Engineer",
+      location: "Remote",
+      date: "Recent — Present",
+      bullets: [
+        "> Built production LLM agents that run the entire go-to-market loop from researching and scoring prospects to writing and sending personalized outreach, and handling replies.",
+        "> Developed the inbound reply engine: an 8-intent classifier (~95% accuracy) paired with a RAG pipeline answering from grounded product knowledge, resolving ~90% of replies with no human in the loop.",
+        "> Engineered the engine to read intent, draft grounded replies, rewrite follow-up sequences, and take automated actions like booking calendar invites or honoring unsubscribes.",
+        "> Implemented guardrails against prompt injection, deterministic parsing for high-stakes data, and idempotent scheduling to ensure safe production AI.",
+        "> Tech Stack: Python, LLMs, Gemini, RAG/vector retrieval, structured tool-calling, Microsoft Graph, and Postgres."
+      ]
+    },
+    {
+      id: "CH_02",
       system: "HAL_MAINFRAME",
       company: "Hindustan Aeronautics Limited",
       role: "Software Engineer Intern",
@@ -23,7 +38,7 @@ export function ExperiencePanel() {
       ]
     },
     {
-      id: "CH_02",
+      id: "CH_03",
       system: "INEURON_CORE",
       company: "iNeuron.ai",
       role: "Machine Learning Intern",
